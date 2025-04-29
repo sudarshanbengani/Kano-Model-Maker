@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply bg-slate-50 text-slate-800;
+  }
+
+  /* Improve focus visibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-600 ring-2 ring-primary-600 ring-offset-2;
+  }
+
+  /* Skip to main content link */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 
+           focus:px-4 focus:py-2 focus:bg-white focus:text-primary-700 focus:rounded-md 
+           focus:shadow-lg focus:ring-2 focus:ring-primary-500;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* High contrast focus styles for better accessibility */
+  .focus-high-contrast {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600;
+  }
+
+  /* Material Design elevation shadows */
+  .elevation-1 {
+    @apply shadow-sm;
+  }
+
+  .elevation-2 {
+    @apply shadow-md;
+  }
+
+  .elevation-3 {
+    @apply shadow-lg;
+  }
+}
